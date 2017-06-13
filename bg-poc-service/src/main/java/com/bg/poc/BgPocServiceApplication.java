@@ -1,5 +1,6 @@
 package com.bg.poc;
 
+import com.bg.poc.eventlog.config.EnableEventLog;
 import com.bg.poc.model.User;
 import com.bg.poc.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @EnableJpaRepositories
+@EnableEventLog
 @SpringBootApplication
 public class BgPocServiceApplication {
 
