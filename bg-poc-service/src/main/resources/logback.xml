@@ -1,0 +1,13 @@
+<configuration scan="true">
+    <springProperty scope="context" name="environment" source="spring.profiles.active"/>
+    <springProperty scope="context" name="appname" source="spring.application.name"/>
+    <appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>logs.reksoft.ru:5000</destination>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <includeCallerInfo>true</includeCallerInfo>
+        </encoder>
+    </appender>
+    <root level="DEBUG">
+        <appender-ref ref="stash"/>
+    </root>
+</configuration>
